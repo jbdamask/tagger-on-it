@@ -65,20 +65,29 @@ module.exports = {
 }
 ```
 
-4. Create a PostCSS configuration file:
-```bash
-touch postcss.config.js
-```
-
-Then add this content to `postcss.config.js`:
-```js
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-}
-```
+4. Configure PostCSS:
+   - If you're using Next.js, you likely already have a `postcss.config.mjs` file. Make sure it includes these plugins:
+   ```js
+   module.exports = {
+     plugins: {
+       tailwindcss: {},
+       autoprefixer: {},
+     },
+   }
+   ```
+   - If you don't have a PostCSS configuration file yet, create `postcss.config.js`:
+   ```bash
+   touch postcss.config.js
+   ```
+   And add this content:
+   ```js
+   module.exports = {
+     plugins: {
+       tailwindcss: {},
+       autoprefixer: {},
+     },
+   }
+   ```
 
 ## Quick Start
 
