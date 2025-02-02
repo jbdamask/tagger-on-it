@@ -15,9 +15,86 @@ A simple React component for selecting and managing tags with autocomplete funct
 
 ## Installation
 
-The TagSelector component requires the following peer dependencies:
-bash
-npm install @heroicons/react/24/outline
+1. Copy the `TagSelector` component files into your project
+2. Install the required dependencies:
+
+```bash
+npm install @heroicons/react/24/outline tailwindcss postcss autoprefixer
+```
+
+3. Add Tailwind CSS to your project:
+```bash
+npx tailwindcss init -p
+```
+
+4. Add this to your `tailwind.config.js`:
+```js
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+## Quick Start
+
+1. First, copy the `TagSelector` component files into your project
+2. Install the required peer dependency
+3. Create a simple implementation of the tag store
+4. Use the component in your React application
+
+Here's a minimal example:
+
+```tsx
+import { useState } from 'react';
+import { TagSelector } from './components/TagSelector';
+import { Tag } from './components/TagSelector/types';
+
+// Simple in-memory tag store implementation
+const simpleTagStore = {
+  tags: [] as Tag[],
+  
+  searchTags: async (query: string) => {
+    return simpleTagStore.tags.filter(tag => 
+      tag.name.toLowerCase().includes(query.toLowerCase())
+    );
+  },
+  
+  createTag: async (name: string) => {
+    const newTag = { id: String(Date.now()), name };
+    simpleTagStore.tags.push(newTag);
+    return newTag;
+  },
+  
+  getAllTags: async () => {
+    return simpleTagStore.tags;
+  }
+};
+
+function App() {
+  const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
+
+  return (
+    <div className="p-4">
+      <h1>Tag Selector Demo</h1>
+      <TagSelector
+        selectedTags={selectedTags}
+        tagStore={simpleTagStore}
+        onTagsChange={setSelectedTags}
+      />
+      <div className="mt-4">
+        Selected tags: {selectedTags.map(tag => tag.name).join(', ')}
+      </div>
+    </div>
+  );
+}
+
+export default App;
+```
 
 ## Usage
 
@@ -199,6 +276,60 @@ This component uses the following open source dependencies:
 - **postcss** (v8.5.1) - [MIT License](https://github.com/postcss/postcss/blob/main/LICENSE)
 - **tailwindcss** (v4.0.3) - [MIT License](https://github.com/tailwindlabs/tailwindcss/blob/master/LICENSE)
 - **typescript** (v5.3.0) - [Apache License 2.0](https://github.com/microsoft/TypeScript/blob/main/LICENSE.txt)
+
+## Examples
+
+Check out the `examples` folder for complete, runnable implementations:
+
+- `SimpleExample.tsx` - Basic in-memory implementation
+- `LocalStorageExample.tsx` - Persistent storage using localStorage
+- `AsyncExample.tsx` - Async implementation with loading states
+
+### Running the Examples
+
+To run the examples, you'll need to:
+
+1. Install the required dependencies:
+```bash
+npm install @heroicons/react/24/outline tailwindcss postcss autoprefixer
+```
+
+2. Add Tailwind CSS to your project:
+```bash
+npx tailwindcss init -p
+```
+
+3. Add this to your `tailwind.config.js`:
+```js
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+4. Import the examples into your app:
+```tsx
+import SimpleExample from './examples/SimpleExample';
+import LocalStorageExample from './examples/LocalStorageExample';
+import AsyncExample from './examples/AsyncExample';
+
+function App() {
+  return (
+    <div>
+      <SimpleExample />
+      <LocalStorageExample />
+      <AsyncExample />
+    </div>
+  );
+}
+```
+
+Each example demonstrates different usage patterns and implementation strategies.
 
 ---
 
