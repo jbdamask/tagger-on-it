@@ -13,44 +13,35 @@ A simple React component for selecting and managing tags with autocomplete funct
 - 💾 Custom tag storage integration
 - 🎨 Customizable styling
 
-## Installation
+## Installation & Quick Start
 
-You can either clone this repository and copy the necessary files, or copy the files directly into your project.
+### 1. Get the Component Files
 
-### Option 1: Clone the Repository
+Choose one of these options:
 
+#### Option A: Clone the Repository
 ```bash
 git clone https://github.com/yourusername/tagger-on-it.git
 cd tagger-on-it
 ```
 
-Then copy the following files into your project:
+#### Option B: Manual File Copy
+Copy these files directly into your project:
 - `src/components/TagSelector/TagSelector.tsx`
 - `src/components/TagSelector/types.ts`
 - `src/components/TagSelector/TagSelector.module.css`
 - `src/components/TagSelector/index.ts`
 
-### Option 2: Manual File Copy
-
-1. Copy the `TagSelector` component files from the repository into your project:
-   - [TagSelector.tsx](https://github.com/yourusername/tagger-on-it/blob/main/src/components/TagSelector/TagSelector.tsx)
-   - [types.ts](https://github.com/yourusername/tagger-on-it/blob/main/src/components/TagSelector/types.ts)
-   - [TagSelector.module.css](https://github.com/yourusername/tagger-on-it/blob/main/src/components/TagSelector/TagSelector.module.css)
-   - [index.ts](https://github.com/yourusername/tagger-on-it/blob/main/src/components/TagSelector/index.ts)
-
-2. Install the required dependencies:
+### 2. Install Dependencies
 
 ```bash
 npm install @heroicons/react
 npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
 ```
 
-3. Create a basic Next.js/React configuration file for Tailwind:
-```bash
-touch tailwind.config.js
-```
+### 3. Configure Tailwind CSS
 
-Then add this content to `tailwind.config.js`:
+Create `tailwind.config.js`:
 ```js
 module.exports = {
   content: [
@@ -65,28 +56,9 @@ module.exports = {
 }
 ```
 
-4. Configure PostCSS:
-   If you're using Next.js, you already have a `postcss.config.mjs` file. Just make sure `tailwindcss` and `autoprefixer` are included in the plugins:
-   ```js
-   /** @type {import('postcss-load-config').Config} */
-   const config = {
-     plugins: {
-       tailwindcss: {},
-       autoprefixer: {},
-     },
-   };
+### 4. Basic Implementation
 
-   export default config;
-   ```
-
-## Quick Start
-
-1. First, copy the `TagSelector` component files into your project
-2. Install the required peer dependency
-3. Create a simple implementation of the tag store
-4. Use the component in your React application
-
-Here's a minimal example:
+Here's a minimal example to get you started:
 
 ```tsx
 import { useState } from 'react';
