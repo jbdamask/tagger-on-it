@@ -15,60 +15,39 @@ A simple React component for selecting and managing tags with autocomplete funct
 - 💾 Custom tag storage integration
 - 🎨 Customizable styling
 
-## Installation & Quick Start
+## Requirements
 
-### 1. Get the Component Files
+To use this component, your project needs:
 
-Choose one of these options:
+- React 16.8.0 or higher (for Hooks support)
+- React DOM 16.8.0 or higher
+- Tailwind CSS (for styling)
 
-#### Option A: Clone the Repository
-```bash
-git clone https://github.com/yourusername/tagger-on-it.git
-cd tagger-on-it
+If using TypeScript (optional):
+- TypeScript 4.5.0 or higher
+- React TypeScript definitions
+
+## Installation
+
+1. Copy these files into your project:
+```
+src/
+  components/
+    TagSelector/
+      TagSelector.tsx
+      types.ts
+      TagSelector.module.css
+      icons/
+        index.ts
+      index.ts
 ```
 
-#### Option B: Manual File Copy
-Copy these files directly into your project:
-- `src/components/TagSelector/TagSelector.tsx`
-- `src/components/TagSelector/types.ts`
-- `src/components/TagSelector/TagSelector.module.css`
-- `src/components/TagSelector/icons/index.ts`
-- `src/components/TagSelector/index.ts`
-
-### 2. Configure Tailwind CSS
-
-Ensure your `tailwind.config.js` or `tailwind.config.ts` includes the directory where you'll place the component:
-
+2. Configure Tailwind CSS by ensuring your `tailwind.config.js` includes the component directory:
 ```js
 content: [
   "./src/**/*.{js,jsx,ts,tsx}",
-  "./pages/**/*.{js,jsx,ts,tsx}",
-  "./components/**/*.{js,jsx,ts,tsx}",
-  "./src/components/**/*.{js,ts,jsx,tsx}",
+  // ... your other content paths
 ],
-```
-
-### 4. Check Out the Examples
-
-See the `examples` directory for different implementation patterns:
-
-- `SimpleExample.tsx` - Basic in-memory implementation
-- `LocalStorageExample.tsx` - Persistent storage using localStorage
-- `AsyncExample.tsx` - Async implementation with loading states
-
-To use an example:
-1. Copy the desired example file from the `examples` directory into your project
-2. Import and use the example component in your app:
-```tsx
-import SimpleExample from './path/to/SimpleExample';
-
-function App() {
-  return (
-    <div>
-      <SimpleExample />
-    </div>
-  );
-}
 ```
 
 ## Usage
@@ -232,46 +211,6 @@ const userTagStore = new UserTagStor(currentUserId);
 ## License
 MIT
 
-## Dependencies Licenses
-
-This component uses the following open source dependencies:
-
-### Development Dependencies
-
-- **@types/node** (v20.11.0) - [MIT License](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/LICENSE)
-- **@types/react** (v18.2.0) - [MIT License](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/LICENSE)
-- **@types/react-dom** (v18.2.0) - [MIT License](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/LICENSE)
-- **autoprefixer** (v10.4.20) - [MIT License](https://github.com/postcss/autoprefixer/blob/main/LICENSE)
-- **postcss** (v8.5.1) - [MIT License](https://github.com/postcss/postcss/blob/main/LICENSE)
-- **tailwindcss** (v4.0.3) - [MIT License](https://github.com/tailwindlabs/tailwindcss/blob/master/LICENSE)
-- **typescript** (v5.3.0) - [Apache License 2.0](https://github.com/microsoft/TypeScript/blob/main/LICENSE.txt)
-
 ## Examples
 
-The package includes several example implementations in the `examples` directory:
-
-- `SimpleExample.tsx` - Basic in-memory implementation
-- `LocalStorageExample.tsx` - Persistent storage using localStorage
-- `AsyncExample.tsx` - Async implementation with loading states
-
-### Running the Examples
-
-1. Copy the desired example file from the `examples` directory into your project
-
-2. Import and use the example component in your app:
-```tsx
-import SimpleExample from './path/to/SimpleExample';
-
-function App() {
-  return (
-    <div>
-      <SimpleExample />
-    </div>
-  );
-}
-```
-
-Each example demonstrates different usage patterns and implementation strategies for the TagSelector component. Review the example code to understand different ways to integrate the component with various storage mechanisms.
-
----
-
+The package includes several example implementations in the `
