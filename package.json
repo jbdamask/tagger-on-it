@@ -2,9 +2,6 @@
   "name": "tagger-on-it",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "uuid": "^9.0.0"
-  },
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
