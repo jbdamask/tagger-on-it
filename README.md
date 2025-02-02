@@ -43,24 +43,40 @@ Then copy the following files into your project:
 ```bash
 npm install @heroicons/react
 npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
-npm install -g npx
 ```
 
-3. Initialize Tailwind CSS in your project:
+3. Create a basic Next.js/React configuration file for Tailwind:
 ```bash
-npx tailwindcss init -p
+touch tailwind.config.js
 ```
 
-4. Add this to your `tailwind.config.js`:
+Then add this content to `tailwind.config.js`:
 ```js
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}"
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./pages/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {},
   },
   plugins: [],
+}
+```
+
+4. Create a PostCSS configuration file:
+```bash
+touch postcss.config.js
+```
+
+Then add this content to `postcss.config.js`:
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
 }
 ```
 
