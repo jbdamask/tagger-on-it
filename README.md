@@ -15,7 +15,29 @@ A simple React component for selecting and managing tags with autocomplete funct
 
 ## Installation
 
-1. Copy the `TagSelector` component files into your project
+You can either clone this repository and copy the necessary files, or copy the files directly into your project.
+
+### Option 1: Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/tagger-on-it.git
+cd tagger-on-it
+```
+
+Then copy the following files into your project:
+- `src/components/TagSelector/TagSelector.tsx`
+- `src/components/TagSelector/types.ts`
+- `src/components/TagSelector/TagSelector.module.css`
+- `src/components/TagSelector/index.ts`
+
+### Option 2: Manual File Copy
+
+1. Copy the `TagSelector` component files from the repository into your project:
+   - [TagSelector.tsx](https://github.com/yourusername/tagger-on-it/blob/main/src/components/TagSelector/TagSelector.tsx)
+   - [types.ts](https://github.com/yourusername/tagger-on-it/blob/main/src/components/TagSelector/types.ts)
+   - [TagSelector.module.css](https://github.com/yourusername/tagger-on-it/blob/main/src/components/TagSelector/TagSelector.module.css)
+   - [index.ts](https://github.com/yourusername/tagger-on-it/blob/main/src/components/TagSelector/index.ts)
+
 2. Install the required dependencies:
 
 ```bash
