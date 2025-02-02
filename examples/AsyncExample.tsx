@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { TagSelector } from '../components/TagSelector';
-import { Tag, TagStore } from '../components/TagSelector/types';
+import { TagSelector } from '../src/TagSelector';
+import { Tag, TagStore } from '../src/types';
 
 // Simulated API delay
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));

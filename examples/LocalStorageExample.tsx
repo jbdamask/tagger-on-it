@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { TagSelector } from '../components/TagSelector';
-import { Tag, TagStore } from '../components/TagSelector/types';
+import { TagSelector } from '../src/TagSelector';
+import { Tag, TagStore } from '../src/types';
 
 // Local storage implementation of TagStore
 class LocalStorageTagStore implements TagStore {
