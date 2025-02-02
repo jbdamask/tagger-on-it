@@ -286,7 +286,7 @@ This component uses the following open source dependencies:
 
 ## Examples
 
-Check out the `examples` folder for complete, runnable implementations:
+The package includes several example implementations in the `examples` directory:
 
 - `SimpleExample.tsx` - Basic in-memory implementation
 - `LocalStorageExample.tsx` - Persistent storage using localStorage
@@ -294,33 +294,22 @@ Check out the `examples` folder for complete, runnable implementations:
 
 ### Running the Examples
 
-To run the examples, you'll need to:
+1. Copy the desired example file from the `examples` directory into your project
 
-1. Make sure you have installed all dependencies (see Installation section above)
-
-2. Add Tailwind CSS to your project:
-```bash
-npx tailwindcss init -p
-```
-
-3. Import the examples into your app:
+2. Import and use the example component in your app:
 ```tsx
-import SimpleExample from './examples/SimpleExample';
-import LocalStorageExample from './examples/LocalStorageExample';
-import AsyncExample from './examples/AsyncExample';
+import SimpleExample from './path/to/SimpleExample';
 
 function App() {
   return (
     <div>
       <SimpleExample />
-      <LocalStorageExample />
-      <AsyncExample />
     </div>
   );
 }
 ```
 
-Each example demonstrates different usage patterns and implementation strategies.
+Each example demonstrates different usage patterns and implementation strategies for the TagSelector component. Review the example code to understand different ways to integrate the component with various storage mechanisms.
 
 ---
 
