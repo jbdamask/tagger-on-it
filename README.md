@@ -41,7 +41,7 @@ Then copy the following files into your project:
 2. Install the required dependencies:
 
 ```bash
-npm install @heroicons/react/24/outline tailwindcss postcss autoprefixer
+npm install @heroicons/react tailwindcss postcss autoprefixer
 ```
 
 3. Add Tailwind CSS to your project:
@@ -311,30 +311,14 @@ Check out the `examples` folder for complete, runnable implementations:
 
 To run the examples, you'll need to:
 
-1. Install the required dependencies:
-```bash
-npm install @heroicons/react/24/outline tailwindcss postcss autoprefixer
-```
+1. Make sure you have installed all dependencies (see Installation section above)
 
 2. Add Tailwind CSS to your project:
 ```bash
 npx tailwindcss init -p
 ```
 
-3. Add this to your `tailwind.config.js`:
-```js
-module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}"
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-```
-
-4. Import the examples into your app:
+3. Import the examples into your app:
 ```tsx
 import SimpleExample from './examples/SimpleExample';
 import LocalStorageExample from './examples/LocalStorageExample';
