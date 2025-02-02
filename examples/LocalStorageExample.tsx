@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import React from 'react';
 import { TagSelector } from '../src/TagSelector';
 import { Tag, TagStore } from '../src/types';
 
