@@ -213,4 +213,29 @@ MIT
 
 ## Examples
 
-The package includes several example implementations in the `
+The package includes several example implementations in the `examples` directory:
+
+- `SimpleExample.tsx` - Basic in-memory implementation
+- `LocalStorageExample.tsx` - Persistent storage using localStorage
+- `AsyncExample.tsx` - Async implementation with loading states
+
+### Running the Examples
+
+1. Copy the desired example file from the `examples` directory into your project
+
+2. Import and use the example component in your app:
+```tsx
+import SimpleExample from './path/to/SimpleExample';
+
+function App() {
+  return (
+    <div>
+      <SimpleExample />
+    </div>
+  );
+}
+```
+
+Each example demonstrates different usage patterns and implementation strategies for the TagSelector component. Review the example code to understand different ways to integrate the component with various storage mechanisms.
+
+---
