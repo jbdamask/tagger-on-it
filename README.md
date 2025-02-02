@@ -32,16 +32,10 @@ Copy these files directly into your project:
 - `src/components/TagSelector/TagSelector.tsx`
 - `src/components/TagSelector/types.ts`
 - `src/components/TagSelector/TagSelector.module.css`
+- `src/components/TagSelector/icons/index.ts`
 - `src/components/TagSelector/index.ts`
 
-### 2. Install Dependencies
-
-```bash
-npm install @heroicons/react
-npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
-```
-
-### 3. Configure Tailwind CSS
+### 2. Configure Tailwind CSS
 
 Ensure your `tailwind.config.js` or `tailwind.config.ts` includes the directory where you'll place the component:
 
@@ -241,11 +235,6 @@ MIT
 ## Dependencies Licenses
 
 This component uses the following open source dependencies:
-
-### Production Dependencies
-
-- **@heroicons/react** (v2.2.0) - [MIT License](https://github.com/tailwindlabs/heroicons/blob/master/LICENSE)
-
 
 ### Development Dependencies
 
