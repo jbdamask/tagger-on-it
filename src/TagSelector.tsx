@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { PlusCircleIcon, XMarkIcon, TagIcon } from '@heroicons/react/24/outline';
 import { Tag, TagStore } from './types';
 import styles from './TagSelector.module.css';
+import { TagIcon, XMarkIcon } from './icons';
 
 export const TagSelector = ({
   selectedTags,
