@@ -66,12 +66,13 @@ module.exports = {
 ```
 
 4. Configure PostCSS:
-   If you're using Next.js, you already have a `postcss.config.mjs` file. Just make sure `tailwindcss` is included in the plugins:
+   If you're using Next.js, you already have a `postcss.config.mjs` file. Just make sure `tailwindcss` and `autoprefixer` are included in the plugins:
    ```js
    /** @type {import('postcss-load-config').Config} */
    const config = {
      plugins: {
        tailwindcss: {},
+       autoprefixer: {},
      },
    };
 
