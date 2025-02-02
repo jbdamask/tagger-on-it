@@ -1,3 +1,5 @@
+# BROKEN - DON'T USE UNTIL INSTALLATION INSTRUCTIONS ARE FIXED
+
 # tagger-on-it
 
 A simple React component for selecting and managing tags with autocomplete functionality. The component supports both light and dark modes and provides a smooth user experience for tag management.
