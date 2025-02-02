@@ -44,7 +44,7 @@ Then copy the following files into your project:
 npm install @heroicons/react tailwindcss postcss autoprefixer
 ```
 
-3. Add Tailwind CSS to your project:
+3. Initialize Tailwind CSS in your project:
 ```bash
 npx tailwindcss init -p
 ```
