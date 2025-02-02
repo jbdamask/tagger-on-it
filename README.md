@@ -52,55 +52,27 @@ content: [
 ],
 ```
 
-### 4. Basic Implementation
+### 4. Check Out the Examples
 
-Here's a minimal example to get you started:
+See the `examples` directory for different implementation patterns:
 
+- `SimpleExample.tsx` - Basic in-memory implementation
+- `LocalStorageExample.tsx` - Persistent storage using localStorage
+- `AsyncExample.tsx` - Async implementation with loading states
+
+To use an example:
+1. Copy the desired example file from the `examples` directory into your project
+2. Import and use the example component in your app:
 ```tsx
-import { useState } from 'react';
-import { TagSelector } from './components/TagSelector';
-import { Tag } from './components/TagSelector/types';
-
-// Simple in-memory tag store implementation
-const simpleTagStore = {
-  tags: [] as Tag[],
-  
-  searchTags: async (query: string) => {
-    return simpleTagStore.tags.filter(tag => 
-      tag.name.toLowerCase().includes(query.toLowerCase())
-    );
-  },
-  
-  createTag: async (name: string) => {
-    const newTag = { id: String(Date.now()), name };
-    simpleTagStore.tags.push(newTag);
-    return newTag;
-  },
-  
-  getAllTags: async () => {
-    return simpleTagStore.tags;
-  }
-};
+import SimpleExample from './path/to/SimpleExample';
 
 function App() {
-  const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
-
   return (
-    <div className="p-4">
-      <h1>Tag Selector Demo</h1>
-      <TagSelector
-        selectedTags={selectedTags}
-        tagStore={simpleTagStore}
-        onTagsChange={setSelectedTags}
-      />
-      <div className="mt-4">
-        Selected tags: {selectedTags.map(tag => tag.name).join(', ')}
-      </div>
+    <div>
+      <SimpleExample />
     </div>
   );
 }
-
-export default App;
 ```
 
 ## Usage
