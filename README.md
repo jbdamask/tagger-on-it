@@ -41,19 +41,15 @@ npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
 
 ### 3. Configure Tailwind CSS
 
-Create `tailwind.config.js`:
+Ensure your `tailwind.config.js` or `tailwind.config.ts` includes the directory where you'll place the component:
+
 ```js
-module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "./pages/**/*.{js,jsx,ts,tsx}",
-    "./components/**/*.{js,jsx,ts,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
+content: [
+  "./src/**/*.{js,jsx,ts,tsx}",
+  "./pages/**/*.{js,jsx,ts,tsx}",
+  "./components/**/*.{js,jsx,ts,tsx}",
+  "./src/components/**/*.{js,ts,jsx,tsx}",
+],
 ```
 
 ### 4. Basic Implementation
