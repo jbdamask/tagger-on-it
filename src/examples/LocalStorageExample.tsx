@@ -43,13 +43,25 @@ export default function LocalStorageExample() {
   
   // Load previously selected tags from localStorage
   useEffect(() => {
+    const selectedTagsKey = 'selected-tags';
     const loadTags = async () => {
-      const allTags = await tagStore.getAllTags();
-      // For this example, we'll start with the first 2 tags selected (if they exist)
-      setSelectedTags(allTags.slice(0, 2));
+      const storedSelectedTags = localStorage.getItem(selectedTagsKey);
+      if (storedSelectedTags) {
+        setSelectedTags(JSON.parse(storedSelectedTags));
+      } else {
+        const allTags = await tagStore.getAllTags();
+        // Initial default selection of first 2 tags (only if no previous selection exists)
+        setSelectedTags(allTags.slice(0, 2));
+      }
     };
     loadTags();
   }, [tagStore]);
+
+  // Save selected tags whenever they change
+  useEffect(() => {
+    const selectedTagsKey = 'selected-tags';
+    localStorage.setItem(selectedTagsKey, JSON.stringify(selectedTags));
+  }, [selectedTags]);
 
   return (
     <div className="p-4">
