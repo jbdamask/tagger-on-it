@@ -254,3 +254,8 @@ The package includes several example implementations in the `examples` directory
 ---
 ## License
 MIT
+
+---
+## attributions
+
+- [Heroicons](https://heroicons.com/) for the icons
