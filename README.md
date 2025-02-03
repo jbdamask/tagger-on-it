@@ -14,17 +14,6 @@ A simple React component for selecting and managing tags with autocomplete funct
 - 💾 Custom tag storage integration
 - 🎨 Customizable styling
 
-## Requirements
-
-To use this component, your project needs:
-
-- React 16.8.0 or higher (for Hooks support)
-- React DOM 16.8.0 or higher
-- Tailwind CSS (for styling)
-
-If using TypeScript (optional):
-- TypeScript 4.5.0 or higher
-- React TypeScript definitions
 
 ## Installation
 
@@ -81,71 +70,8 @@ export default function App() {
     </>
   )
 }
-
-
 ```
 
-## Usage
-
-```tsx
-import { TagSelector } from './components/TagSelector';
-import { TagStore } from './components/TagSelector/types';
-
-// Implement your tag store
-const myTagStore: TagStore = {
-  searchTags: async (query) => {
-    // Implement tag search logic
-    return [];
-  },
-  createTag: async (name) => {
-    // Implement tag creation logic
-    return { id: 'new-id', name };
-  },
-  getAllTags: async () => {
-    // Implement fetching all tags
-    return [];
-  },
-};
-
-function MyComponent() {
-  const [selectedTags, setSelectedTags] = useState([]);
-
-  return (
-    <TagSelector
-      selectedTags={selectedTags}
-      tagStore={myTagStore}
-      onTagsChange={setSelectedTags}
-      className="custom-class"
-    />
-  );
-}
-```
-
-## Props
-
-| Prop | Type | Required | Description |
-|------|------|----------|-------------|
-| `selectedTags` | `Tag[]` | Yes | Array of currently selected tags |
-| `tagStore` | `TagStore` | Yes | Interface for tag operations |
-| `onTagsChange` | `(tags: Tag[]) => void` | Yes | Callback when tags change |
-| `className` | `string` | No | Additional CSS classes |
-
-## TagStore Interface
-
-The component requires a `TagStore` implementation with the following methods:
-
-```typescript
-interface TagStore {
-  searchTags: (query: string) => Promise<Tag[]>;
-  createTag: (name: string) => Promise<Tag>;
-  getAllTags: () => Promise<Tag[]>;
-}
-
-interface Tag {
-  id: string;
-  name: string;
-}
-```
 
 ## Features in Detail
 
@@ -167,22 +93,6 @@ interface Tag {
 - Customizable via CSS modules
 - Smooth transitions and hover effects
 
-## CSS Customization
-
-The component uses CSS modules and CSS variables for styling. You can override the default styles by targeting the following CSS variables:
-
-```css
-.root {
-  --border-color: #e5e7eb;
-  --tag-bg: #f3f4f6;
-  --text-primary: #000000;
-  --text-secondary: #6b7280;
-  --bg-primary: #ffffff;
-  --input-bg: #ffffff;
-  --hover-bg: #f3f4f6;
-  --shadow-color: rgb(0 0 0 / 0.1);
-}
-```
 
 ---
 ## License
