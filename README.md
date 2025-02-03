@@ -55,20 +55,33 @@ import './App.css'
 import SimpleExample from './examples/SimpleExample'
 import LocalStorageExample from './examples/LocalStorageExample'
 import AsyncExample from './examples/AsyncExample'
+import MultiTenantExample from './examples/MultiTenantExample'
 export default function App() {
+  const containerStyle = {
+    border: '1px solid #ddd',
+    borderRadius: '8px',
+    padding: '20px',
+    margin: '20px',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+    maxWidth: '800px',
+    width: '90%'
+  }
   return (
     <>
-    <div align="center">
-      <div>
-        <SimpleExample />
+      <div align="center">
+        <div style={containerStyle}>
+          <SimpleExample />
+        </div>
+        <div style={containerStyle}>
+          <LocalStorageExample />
+        </div>
+        <div style={containerStyle}>
+          <AsyncExample />
+        </div>
+        <div style={containerStyle}>
+          <MultiTenantExample />
+        </div>
       </div>
-      <div>
-        <LocalStorageExample />
-      </div>
-      <div>
-        <AsyncExample />
-      </div>
-    </div>
     </>
   )
 }
