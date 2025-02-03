@@ -65,25 +65,25 @@ import './App.css'
 import SimpleExample from './examples/SimpleExample'
 import LocalStorageExample from './examples/LocalStorageExample'
 import AsyncExample from './examples/AsyncExample'
-
-
 export default function App() {
   return (
     <>
-    <div>
-      <SimpleExample />
-    </div>
-
-    <div>
-      <LocalStorageExample />
-    </div>
-
-    <div>
-      <AsyncExample />
+    <div align="center">
+      <div>
+        <SimpleExample />
+      </div>
+      <div>
+        <LocalStorageExample />
+      </div>
+      <div>
+        <AsyncExample />
+      </div>
     </div>
     </>
   )
 }
+
+
 ```
 
 ## Usage
