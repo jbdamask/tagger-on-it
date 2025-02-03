@@ -42,13 +42,13 @@ src/
       index.ts
 ```
 
-2. Configure Tailwind CSS by ensuring your `tailwind.config.js` includes the component directory:
+<!-- 2. Configure Tailwind CSS by ensuring your `tailwind.config.js` includes the component directory:
 ```js
 content: [
   "./src/**/*.{js,jsx,ts,tsx}",
   // ... your other content paths
 ],
-```
+``` -->
 
 ## Usage
 
@@ -149,7 +149,7 @@ The component uses CSS modules and CSS variables for styling. You can override t
 }
 ```
 
-## TagStore Examples
+<!-- ## TagStore Examples
 
 ### Simple Local Storage Implementation
 This basic implementation stores tags in the browser's localStorage:
@@ -206,10 +206,7 @@ class UserTagStore implements TagStore {
 // Usage:
 const userTagStore = new UserTagStor(currentUserId);
 <TagSelector store={userTagStore} />
-```
-
-## License
-MIT
+``` -->
 
 ## Examples
 
@@ -239,3 +236,5 @@ function App() {
 Each example demonstrates different usage patterns and implementation strategies for the TagSelector component. Review the example code to understand different ways to integrate the component with various storage mechanisms.
 
 ---
+## License
+MIT
