@@ -2,7 +2,8 @@
 
 A simple React component for selecting and managing tags with autocomplete functionality. The component supports both light and dark modes and provides a smooth user experience for tag management.
 
-![TagSelector Screenshot](tag-selector.png)
+<!-- ![TagSelector Screenshot](tag-selector.png) -->
+![Tagger-on-it](tagger-on-it-video.gif) 
 
 ## Features
 
