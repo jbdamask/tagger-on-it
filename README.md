@@ -48,6 +48,8 @@ src/
 ```
 
 3. Copy the examples directory to src/examples
+
+Each example demonstrates different usage patterns and implementation strategies for the TagSelector component. Review the example code to understand different ways to integrate the component with various storage mechanisms.
 ```
 src/
   examples/
@@ -56,13 +58,33 @@ src/
     AsyncExample.tsx
 ```
 
-<!-- 2. Configure Tailwind CSS by ensuring your `tailwind.config.js` includes the component directory:
-```js
-content: [
-  "./src/**/*.{js,jsx,ts,tsx}",
-  // ... your other content paths
-],
-``` -->
+4. Replace the App.tsx file created by the Vite project with the following:
+```tsx
+import { useState } from 'react'
+import './App.css'
+import SimpleExample from './examples/SimpleExample'
+import LocalStorageExample from './examples/LocalStorageExample'
+import AsyncExample from './examples/AsyncExample'
+
+
+export default function App() {
+  return (
+    <>
+    <div>
+      <SimpleExample />
+    </div>
+
+    <div>
+      <LocalStorageExample />
+    </div>
+
+    <div>
+      <AsyncExample />
+    </div>
+    </>
+  )
+}
+```
 
 ## Usage
 
@@ -230,24 +252,6 @@ The package includes several example implementations in the `examples` directory
 - `LocalStorageExample.tsx` - Persistent storage using localStorage
 - `AsyncExample.tsx` - Async implementation with loading states
 
-### Running the Examples
-
-1. Copy the desired example file from the `examples` directory into your project
-
-2. Import and use the example component in your app:
-```tsx
-import SimpleExample from './path/to/SimpleExample';
-
-function App() {
-  return (
-    <div>
-      <SimpleExample />
-    </div>
-  );
-}
-```
-
-Each example demonstrates different usage patterns and implementation strategies for the TagSelector component. Review the example code to understand different ways to integrate the component with various storage mechanisms.
 
 ---
 ## License

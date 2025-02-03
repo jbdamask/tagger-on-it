@@ -58,14 +58,6 @@ export default function AsyncExample() {
         tagStore={tagStore}
         onTagsChange={setSelectedTags}
       />
-      <div className="mt-4">
-        <h2 className="text-lg font-semibold">Selected Tags:</h2>
-        <div className="text-gray-700">
-          {selectedTags.length > 0 
-            ? selectedTags.map(tag => tag.name).join(', ')
-            : 'No tags selected'}
-        </div>
-      </div>
     </div>
   );
 } 

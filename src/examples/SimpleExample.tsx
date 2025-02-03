@@ -37,9 +37,6 @@ export default function SimpleExample() {
         tagStore={simpleTagStore}
         onTagsChange={setSelectedTags}
       />
-      <div className="mt-4">
-        Selected tags: {selectedTags.map(tag => tag.name).join(', ')}
-      </div>
     </div>
   );
 } 
