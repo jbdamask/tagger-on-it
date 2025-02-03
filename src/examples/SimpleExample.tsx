@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import React from 'react';
-import { TagSelector } from '../src/components/TagSelector';
-import { Tag } from '../src/components/TagSelector/types';
+import { TagSelector } from '../components/TagSelector';
+import { Tag } from '../components/TagSelector/types';
 
 // Simple in-memory tag store implementation
 const simpleTagStore = {

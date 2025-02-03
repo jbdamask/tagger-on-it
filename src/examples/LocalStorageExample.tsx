@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import React from 'react';
-import { TagSelector } from '../src/components/TagSelector';
-import { Tag, TagStore } from '../src/components/TagSelector/types';
+import { TagSelector } from '../components/TagSelector';
+import { Tag, TagStore } from '../components/TagSelector/types';
 
 // Local storage implementation of TagStore
 class LocalStorageTagStore implements TagStore {

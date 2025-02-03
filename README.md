@@ -29,7 +29,12 @@ If using TypeScript (optional):
 
 ## Installation
 
-1. Copy these files into your project:
+1. You can quickly test this component by creating a new Vite project:
+```
+npm create vite@latest tagger-test -- --template react
+```
+
+2. Copy the TagSelector directory to src/components
 ```
 src/
   components/
@@ -40,6 +45,15 @@ src/
       icons/
         index.ts
       index.ts
+```
+
+3. Copy the examples directory to src/examples
+```
+src/
+  examples/
+    SimpleExample.tsx
+    LocalStorageExample.tsx
+    AsyncExample.tsx
 ```
 
 <!-- 2. Configure Tailwind CSS by ensuring your `tailwind.config.js` includes the component directory:
