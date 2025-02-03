@@ -3,7 +3,7 @@
 A simple React component for selecting and managing tags with autocomplete functionality. The component supports both light and dark modes and provides a smooth user experience for tag management.
 
 <!-- ![TagSelector Screenshot](tag-selector.png) -->
-![Tagger-on-it](tagger-on-it-video.gif) 
+![Tagger-on-it](tagger-on-it.gif) 
 
 ## Features
 
@@ -16,6 +16,8 @@ A simple React component for selecting and managing tags with autocomplete funct
 
 
 ## Installation
+
+![Tagger-on-it-install](tagger-on-it-install.gif) 
 
 1. You can quickly test this component by creating a new Vite project:
 ```
