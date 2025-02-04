@@ -9,7 +9,6 @@ A simple React component for selecting and managing tags with autocomplete funct
 
 - 🏷️ Add and remove tags
 - 🔍 Autocomplete suggestions
-- ⌨️ Keyboard navigation support
 - 🌓 Light and dark mode support
 - 💾 Custom tag storage integration
 - 🎨 Customizable styling
@@ -46,6 +45,7 @@ src/
     SimpleExample.tsx
     LocalStorageExample.tsx
     AsyncExample.tsx
+    MultiTenantExample.tsx
 ```
 
 4. Replace the App.tsx file created by the Vite project with the following:
