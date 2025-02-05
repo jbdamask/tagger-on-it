@@ -26,7 +26,8 @@ class SupabaseTagStore implements TagStore {
       .eq('user_id', this.userId);
     
     if (limit) {
-      // Request one extra item to determine if there are more
+      // This is a trick to limit the number of tags returned, but check to see if 
+      // there are more than the passed-in limit. 
       query = query.limit(limit + 1);
     }
 
@@ -37,8 +38,8 @@ class SupabaseTagStore implements TagStore {
       return [];
     }
 
-    // Notice we don't truncate the returned dict. This is because we need to 
-    // know if there are more tags in the database than what the UI will show.
+    // Notice we don't truncate the returned dict. This is because TagSelector needs to 
+    // know if there are more tags in the database than shown in the UI.
     return data
       .map(tag => ({
         id: tag.tag_id,
@@ -170,6 +171,7 @@ export default function SupabaseExample() {
           selectedTags={selectedTags}
           tagStore={new SupabaseTagStore(userId)}
           onTagsChange={setSelectedTags}
+          maxSuggestions={5} // Changing the number of suggestions shown in the UI
         />
       </div>
     </div>

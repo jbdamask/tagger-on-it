@@ -90,7 +90,7 @@ export default function App() {
 
 ```
 
-5. (__Optional__) The Supabase example is a more complex example that demonstrates how to use the component with a Supabase database. Do the following if you want to try it:
+5. (__Optional__) The Supabase example is a more complex and shows how you can use this component with a database. It implements the TagStore interface with an additional property to restrict queries to specific users. Follow these steps to run this example:
 
 - Create a Supabase project (it's free to test)
 - Copy the Supabase url and anon key into an .env.local file in your test project's root

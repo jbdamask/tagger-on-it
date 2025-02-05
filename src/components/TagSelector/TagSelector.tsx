@@ -8,13 +8,14 @@ export const TagSelector = ({
   tagStore,
   onTagsChange,
   className,
+  maxSuggestions = 15
 }: {
   selectedTags: Tag[];
   tagStore: TagStore;
   onTagsChange: (tags: Tag[]) => void;
   className?: string;
+  maxSuggestions?: number;
 }) => {
-  const MAX_SUGGESTIONS = 15; // Limit the number of suggestions
   const [isAdding, setIsAdding] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const [suggestions, setSuggestions] = useState<Tag[]>([]);
@@ -24,12 +25,12 @@ export const TagSelector = ({
 
   useEffect(() => {
     const loadAllTags = async () => {
-      const tags = await tagStore.getAllTags(MAX_SUGGESTIONS);
+      const tags = await tagStore.getAllTags(maxSuggestions);
       const sortedTags = tags.sort((a, b) => a.name.localeCompare(b.name));
       setAllTags(sortedTags);
     };
     loadAllTags();
-  }, [tagStore]);
+  }, [tagStore, maxSuggestions]);
 
   useEffect(() => {
     if (isAdding && inputRef.current) {
@@ -53,7 +54,7 @@ export const TagSelector = ({
     } else {
       setSuggestions(allTags
         .filter(tag => !selectedTags.some(selected => selected.id === tag.id))
-        .slice(0, MAX_SUGGESTIONS)
+        .slice(0, maxSuggestions)
       );
     }
   };
@@ -125,7 +126,7 @@ export const TagSelector = ({
               onFocus={() => setSuggestions(
                 allTags
                   .filter(tag => !selectedTags.some(selected => selected.id === tag.id))
-                  .slice(0, MAX_SUGGESTIONS)
+                  .slice(0, maxSuggestions)
               )}
               onBlur={() => {
                 if ( !isSelectingTag.current) {
@@ -149,7 +150,7 @@ export const TagSelector = ({
                     {tag.name}
                   </div>
                 ))}
-                {allTags.length > MAX_SUGGESTIONS && suggestions.length === MAX_SUGGESTIONS && (
+                {allTags.length > maxSuggestions && suggestions.length === maxSuggestions && (
                   <div className={styles.moreSuggestions}>
                     Type a letter for more...
                   </div>
