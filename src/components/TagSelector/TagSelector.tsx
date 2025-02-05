@@ -14,7 +14,7 @@ export const TagSelector = ({
   onTagsChange: (tags: Tag[]) => void;
   className?: string;
 }) => {
-  const MAX_SUGGESTIONS = 20; // Limit the number of suggestions
+  const MAX_SUGGESTIONS = 15; // Limit the number of suggestions
   const [isAdding, setIsAdding] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const [suggestions, setSuggestions] = useState<Tag[]>([]);
@@ -24,7 +24,7 @@ export const TagSelector = ({
 
   useEffect(() => {
     const loadAllTags = async () => {
-      const tags = await tagStore.getAllTags();
+      const tags = await tagStore.getAllTags(MAX_SUGGESTIONS);
       const sortedTags = tags.sort((a, b) => a.name.localeCompare(b.name));
       setAllTags(sortedTags);
     };

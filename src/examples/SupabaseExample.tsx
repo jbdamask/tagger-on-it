@@ -19,21 +19,31 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
 class SupabaseTagStore implements TagStore {
   constructor(private userId: string) {}
 
-  async getAllTags(): Promise<Tag[]> {
-    const { data, error } = await supabase
+  async getAllTags(limit?: number): Promise<Tag[]> {
+    let query = supabase
       .from('user_tags')
       .select('tag_id, tag_name')
       .eq('user_id', this.userId);
+    
+    if (limit) {
+      // Request one extra item to determine if there are more
+      query = query.limit(limit + 1);
+    }
+
+    const { data, error } = await query;
 
     if (error) {
       console.error('Error fetching tags:', error);
       return [];
     }
 
-    return data.map(tag => ({
-      id: tag.tag_id,
-      name: tag.tag_name,
-    }));
+    // Notice we don't truncate the returned dict. This is because we need to 
+    // know if there are more tags in the database than what the UI will show.
+    return data
+      .map(tag => ({
+        id: tag.tag_id,
+        name: tag.tag_name,
+      }))
   }
 
   async searchTags(query: string): Promise<Tag[]> {

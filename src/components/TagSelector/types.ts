@@ -6,5 +6,5 @@ export interface Tag {
 export interface TagStore {
   searchTags: (query: string) => Promise<Tag[]>;
   createTag: (name: string) => Promise<Tag>;
-  getAllTags: () => Promise<Tag[]>;
+  getAllTags: (limit?: number) => Promise<Tag[]>;
 } 
