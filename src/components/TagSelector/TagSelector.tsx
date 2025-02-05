@@ -14,6 +14,7 @@ export const TagSelector = ({
   onTagsChange: (tags: Tag[]) => void;
   className?: string;
 }) => {
+  const MAX_SUGGESTIONS = 20; // Limit the number of suggestions
   const [isAdding, setIsAdding] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const [suggestions, setSuggestions] = useState<Tag[]>([]);
@@ -52,7 +53,7 @@ export const TagSelector = ({
     } else {
       setSuggestions(allTags
         .filter(tag => !selectedTags.some(selected => selected.id === tag.id))
-        .slice(0, 100)
+        .slice(0, MAX_SUGGESTIONS)
       );
     }
   };
@@ -124,7 +125,7 @@ export const TagSelector = ({
               onFocus={() => setSuggestions(
                 allTags
                   .filter(tag => !selectedTags.some(selected => selected.id === tag.id))
-                  .slice(0, 100)
+                  .slice(0, MAX_SUGGESTIONS)
               )}
               onBlur={() => {
                 if ( !isSelectingTag.current) {
@@ -148,8 +149,10 @@ export const TagSelector = ({
                     {tag.name}
                   </div>
                 ))}
-                {allTags.length > 100 && suggestions.length === 100 && (
-                  <div className={styles.suggestionItem}>...</div>
+                {allTags.length > MAX_SUGGESTIONS && suggestions.length === MAX_SUGGESTIONS && (
+                  <div className={styles.moreSuggestions}>
+                    Type a letter for more...
+                  </div>
                 )}
               </div>
             )}

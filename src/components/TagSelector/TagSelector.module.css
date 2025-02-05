@@ -110,15 +110,24 @@
   overflow-y: auto;
 }
 
-.suggestionItem {
+.suggestionItem,
+.moreSuggestions {
   padding: 0.5rem;
-  cursor: pointer;
   font-size: 0.875rem;
+}
+
+.suggestionItem {
+  cursor: pointer;
   color: var(--text-primary);
 }
 
 .suggestionItem:hover {
   background-color: var(--hover-bg);
+}
+
+.moreSuggestions {
+  color: var(--text-secondary);
+  font-style: italic;
 }
 
 @media (prefers-color-scheme: dark) {
