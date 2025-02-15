@@ -27,6 +27,9 @@ export const TagSelector = ({
     const loadAllTags = async () => {
       const tags = await tagStore.getAllTags(maxSuggestions);
       if (!tags || tags.length === 0) {
+        // We need to set to tags even though it's empty
+        // this allows the code to maintain the correct reference
+        setAllTags(tags);
         return;
       }
       const sortedTags = tags.sort((a, b) => a.name.localeCompare(b.name));
