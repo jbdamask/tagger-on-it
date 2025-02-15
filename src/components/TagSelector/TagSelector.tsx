@@ -26,6 +26,9 @@ export const TagSelector = ({
   useEffect(() => {
     const loadAllTags = async () => {
       const tags = await tagStore.getAllTags(maxSuggestions);
+      if (!tags || tags.length === 0) {
+        return;
+      }
       const sortedTags = tags.sort((a, b) => a.name.localeCompare(b.name));
       setAllTags(sortedTags);
     };
