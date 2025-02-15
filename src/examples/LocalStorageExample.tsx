@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import React from 'react';
 import { TagSelector } from '../components/TagSelector';
 import { Tag, TagStore } from '../components/TagSelector/types';
@@ -8,14 +8,28 @@ import { Tag, TagStore } from '../components/TagSelector/types';
 // Local storage implementation of TagStore
 class LocalStorageTagStore implements TagStore {
   private storageKey = 'tag-selector-tags';
+  private selectedKey = 'selected-tags';
+  cache: Tag[] | null = null;
   
   private getTags(): Tag[] {
-    const stored = localStorage.getItem(this.storageKey);
-    return stored ? JSON.parse(stored) : [];
+    if (!this.cache) {
+      // Get both all tags and selected tags
+      const stored = localStorage.getItem(this.storageKey);
+      const selectedStored = localStorage.getItem(this.selectedKey);
+      
+      // Combine both sources
+      const allTags = stored ? JSON.parse(stored) : [];
+      const selectedTags = selectedStored ? JSON.parse(selectedStored) : [];
+      
+      // Ensure selected tags are in all tags
+      this.cache = [...new Map([...allTags, ...selectedTags].map(tag => [tag.id, tag])).values()];
+    }
+    return this.cache as Tag[];
   }
   
   private saveTags(tags: Tag[]): void {
     localStorage.setItem(this.storageKey, JSON.stringify(tags));
+    this.cache = null;
   }
   
   async searchTags(query: string): Promise<Tag[]> {
@@ -61,6 +75,9 @@ export default function LocalStorageExample() {
   useEffect(() => {
     const selectedTagsKey = 'selected-tags';
     localStorage.setItem(selectedTagsKey, JSON.stringify(selectedTags));
+    // Clear the cache when selected tags change
+    tagStore.cache = null;
+    tagStore.getAllTags();
   }, [selectedTags]);
 
   return (
