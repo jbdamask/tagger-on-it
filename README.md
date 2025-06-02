@@ -1,5 +1,7 @@
 # tagger-on-it
 
+<img src="nigel.png" width="300" height="300" alt="Tagger-on-it">
+
 A simple React component for selecting and managing tags with autocomplete functionality. The component supports both light and dark modes and provides a smooth user experience for tag management.
 
 <!-- ![TagSelector Screenshot](tag-selector.png) -->
